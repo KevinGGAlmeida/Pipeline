@@ -1,9 +1,10 @@
 FROM  python
 
-WORKDIR /app
-
 RUN python -m pip install flask flask_session pytest pylint
 
-COPY . .
+WORKDIR /app
+
+# Copiar os arquivos da pasta local para dentro do container
+COPY . /app
 
 CMD ["python","app.py"]
