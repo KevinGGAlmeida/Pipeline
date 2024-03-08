@@ -27,3 +27,13 @@ jobs:
 
       - name: Lint Test
         run: python -m pylint app.py --fail-under=7.0 --recursive=y --enable=W
+
+  Deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: DockerHub build
+          run: docker build -t kevinalmeida:pipelineapp
+
+        - name: DockerHub Pull
+          run: docker push kevinalmeida:pipelineapp 
+
