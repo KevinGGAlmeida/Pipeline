@@ -2,7 +2,7 @@ FROM  python
 
 WORKDIR /app
 
-RUN python -m pip install flask flask_session
+RUN python -m pip install flask flask_session pytest pylint
 
 COPY . .
 
